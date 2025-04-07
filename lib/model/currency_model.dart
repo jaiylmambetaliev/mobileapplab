@@ -1,14 +1,13 @@
-import 'package:shared_preferences/shared_preferences.dart';
+class CurrencyConversion {
+  final String fromCurrency;
+  final String toCurrency;
+  final double inputAmount;
+  final double convertedAmount;
 
-
-class Preferences {
-  static Future<void> saveLastAmount(double amount) async {
-    final prefs = await SharedPreferences.getInstance();
-    prefs.setDouble('lastAmount', amount);
-  }
-
-  static Future<double?> getLastAmount() async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.getDouble('lastAmount');
-  }
+  CurrencyConversion({
+    required this.fromCurrency,
+    required this.toCurrency,
+    required this.inputAmount,
+    required this.convertedAmount,
+  });
 }
